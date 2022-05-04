@@ -1,8 +1,8 @@
 # ShoeRinsics: Shoeprint Prediction for Forensics with Intrinsic Decomposition
 
-This repo contains the official Pytorch implementation of:
+<!-- This repo contains the official Pytorch implementation of:
 
-[ShoeRinsics: Shoeprint Prediction for Forensics with Intrinsic Decomposition](.html)
+[ShoeRinsics: Shoeprint Prediction for Forensics with Intrinsic Decomposition](.html) -->
 
 [Samia Shafique](https://sites.google.com/site/samiashafique067/), [Bailey Kong](https://baileykong.com/), [Shu Kong](http://www.cs.cmu.edu/~shuk/), and [Charless Fowlkes](https://www.ics.uci.edu/~fowlkes/)
 
