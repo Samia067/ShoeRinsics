@@ -8,6 +8,7 @@ This is the official repo for our paper:
 
 [Samia Shafique](https://sites.google.com/site/samiashafique067/), [Bailey Kong](https://baileykong.com/), [Shu Kong](http://www.cs.cmu.edu/~shuk/), and [Charless Fowlkes](https://www.ics.uci.edu/~fowlkes/)
 
+WACV 2023
 <!-- CVPR 2021 (oral)
 
 For more details, please check our [project website](https://www.ics.uci.edu/~yunhaz5/cvpr2021/cpp.html) -->
