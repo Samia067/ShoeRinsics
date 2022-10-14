@@ -1,10 +1,10 @@
-# ShoeRinsics: Shoeprint Prediction for Forensics with Intrinsic Decomposition
+# Creating a Forensic Database of Shoeprints from Online Shoe-Tread Photos
 
 <!-- This repo contains the official Pytorch implementation of: -->
 
 This is the official repo for our paper:
 
-[ShoeRinsics: Shoeprint Prediction for Forensics with Intrinsic Decomposition](https://arxiv.org/abs/2205.02361)
+[Creating a Forensic Database of Shoeprints from Online Shoe-Tread Photos](https://arxiv.org/abs/2205.02361)
 
 [Samia Shafique](https://sites.google.com/site/samiashafique067/), [Bailey Kong](https://baileykong.com/), [Shu Kong](http://www.cs.cmu.edu/~shuk/), and [Charless Fowlkes](https://www.ics.uci.edu/~fowlkes/)
 
@@ -13,7 +13,7 @@ This is the official repo for our paper:
 For more details, please check our [project website](https://www.ics.uci.edu/~yunhaz5/cvpr2021/cpp.html) -->
 
 ### Abstract
-Shoe tread impressions are one of the most common types of evidence left at crime scenes. However, the utility of such evidence is limited by the lack of databases of footwear impression patterns that cover the huge and growing number of distinct shoe models. We propose to address this gap by leveraging shoe tread photographs collected by online retailers. The core challenge is to predict the impression pattern from the shoe photograph since ground-truth impressions or 3D shapes of tread patterns are not available. We develop a model that performs intrinsic image decomposition (predicting depth, normal, albedo and lighting) from a single tread photo. Our approach, which we term ShoeRinsics, combines domain adaptation and re-rendering losses in order to leverage a mix of fully supervised synthetic data and unsupervised retail image data. To validate model performance, we also collected a set of paired shoe-sole images and corresponding prints, and define a benchmarking protocol to quantify accuracy of predicted impressions. On this benchmark, ShoeRinsics outperforms existing methods for depth prediction and synthetic-to-real domain adaptation.
+Shoe-tread impressions are one of the most common types of evidence left at crime scenes. However, the utility of such evidence is limited by the lack of databases of footwear prints that cover the large and growing number of distinct shoe models. Moreover, the database is preferred to contain the 3D shape, or depth, of shoe-tread photos so as to allow for extracting shoeprints to match a query (crime-scene) print. We propose to address this gap by leveraging shoe-tread photos collected by online retailers. The core challenge is to predict depth maps for these photos. As they do not have ground-truth 3D shapes allowing for training depth predictors, we exploit synthetic data that does. We develop a method, termed ShoeRinsics, that learns to predict depth from fully supervised synthetic data and unsupervised retail image data. In particular, we find domain adaptation and intrinsic image decomposition techniques effectively mitigate the synthetic-real domain gap and yield significantly better depth predictions. To validate our method, we introduce 2 validation sets consisting of shoe-tread image and print pairs and define a benchmarking protocol to quantify the quality of predicted depth. On this benchmark, ShoeRinsics outperforms existing methods of depth prediction and synthetic-to-real domain adaptation.
 
 **Keywords**: Shoeprints, Forensic Evidence, Depth Prediction, Intrinsic Decomposition, and Domain Adaptation 
 
@@ -23,7 +23,7 @@ Shoe tread impressions are one of the most common types of evidence left at crim
     <img src='git/figures/architecture.png' width='500'/>
 </p>
 
-The flowchart of our method ShoeRinsics in training. The training data consists of synthetic images labeled with intrinsic components and unlabeled real images. Conceptually, ShoeRinsics incorporates intrinsic decomposition (right part) and domain adaptation (left part) to learn a depth predictor for real shoe-sole images. We use a renderer pre-trained on synthetic data to regularize intrinsic decomposition from which we obtain depth predictions. We find this works better than learning to predict depth only, presumably because intrinsic decomposition leverages extra supervision from synthetic data that helps depth prediction learning.
+Predicting depth for shoe-tread images (collected by online retailers) is the core challenge in constructing a shoeprint database for forensic use. We develop a method termed ShoeRinsics to learn depth predictors. The flowchart depicts how we train ShoeRinsics using annotated synthetic and un-annotated real images. We use domain adaptation (via image translators G<sub>S→R</sub> and G<sub>R→S</sub>) and intrinsic image decomposition (via decomposer F and renderer R) techniques to mitigate synthetic-real domain gaps. Our method achieves significantly better depth prediction on real shoe-tread images than the prior art.
 
 
 <!-- ### Reference
