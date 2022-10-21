@@ -95,4 +95,4 @@ If you want to evaluate with your own data, please create your own testing set w
 Pretrained models will be uploaded soon. -->
 
 ### Questions
-Please feel free to email me at (sshafiqu [at] ics [dot] uci [dot] edu) if you have any questions.
+Please feel free to email me at (sshafiqu [at] uci [dot] edu) if you have any questions.
