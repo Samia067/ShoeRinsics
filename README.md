@@ -93,7 +93,7 @@ test.py --weights_decomposer=../models/decomposer_best_state.t7    --dataroot=..
     Val_dataset_dir should name the directory for the validation dataset used (real_val or real_FID_val).
 </p>
 
-You can download our predictions on real-val and real-FID-val [here](https://drive.google.com/drive/folders/1koeAF1iKp_fjviEaD0UvbYRb2Yx8TPnF?usp=share_link).
+Our predictions on real-val and real-FID-val are available [here](https://drive.google.com/drive/folders/1koeAF1iKp_fjviEaD0UvbYRb2Yx8TPnF?usp=share_link).
 
 ### Training
 
