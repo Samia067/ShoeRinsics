@@ -95,33 +95,33 @@ You can download our predictions on real-val and real-FID-val [here](https://dri
 
 ### Training
 
-We train our network in stages.
+We train our network in stages as follows: 
 
-First, train the decomposer with synthetic data.
+1. Train the decomposer with synthetic data.
 ```
 python train.py  --dataroot=../data/  --batch=8   --lr=1e-4  
 --syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train  --train_net
 ```
 
-Second, train the renderer with synthetic data.
+2. Train the renderer with synthetic data.
 ```
 python train.py     --dataroot=../data/  --batch=8   --lr=1e-4  
 --syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train  --train_renderer
 ```
 
-Third, train the translator using code from 
+3. Train the translator using code from 
 [CycleGAN's official release](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
 Our pretrained translator can be downloaded 
 [here](https://drive.google.com/file/d/18NhGoKIFcFY4mrP86chSdvCNtrjeFySD/view?usp=share_link).
 
-Fourth, finetune the renderer with translated synthetic data.
+4. Finetune the renderer with translated synthetic data.
 ```
 python train.py  --dataroot=../data/  --batch=8   --lr=1e-4  
 --weights_translator=../models/translator_best_state.t7   --weights_renderer=../models/renderer_best_state.t7
 --syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train  --train_renderer
 ```
 
-Fifth, finetune the decomposer using the full pipeline.
+5. Finetune the decomposer using the full pipeline.
 ```
 python train.py  --weights_decomposer=../models/decomposer_best_state.t7       --dataroot=../data/
 --weights_translator=../models/translator_best_state.t7   --weights_renderer=../models/renderer_best_state.t7
