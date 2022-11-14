@@ -87,26 +87,32 @@ and test them with our proposed metric:
 ```
 test.py --weights_decomposer=../models/decomposer_best_state.t7    --dataroot=../data/     --val_dataset_dir=real_val
 ```
-Note that weights_decomposer should specify the path to the pretrained model. 
-Dataroot should specify the path to the root directory which holds all datasets used in the experiments.
-Val_dataset_dir should name the directory for the validation dataset used (real_val or real_FID_val).
+<p align="justify">
+    Note that weights_decomposer should specify the path to the pretrained model. 
+    Dataroot should specify the path to the root directory which holds all datasets used in the experiments.
+    Val_dataset_dir should name the directory for the validation dataset used (real_val or real_FID_val).
+</p>
 
 You can download our predictions on real-val and real-FID-val [here](https://drive.google.com/drive/folders/1koeAF1iKp_fjviEaD0UvbYRb2Yx8TPnF?usp=share_link).
 
 ### Training
 
-We train our network in stages as follows: 
+<p align="justify">
+    We train our network in stages. We outline each step below. 
+    Note that paths should be set appropriately. 
+    Dataroot specifies the path to the root directory containing datasets, 
+    Syn_train_dataset_dir and real_train_dataset_dir are the names of the synthetic and real training dataset directories.
+    Weights_translator, weights_renderer, and weights_decomposer should specify path to corresponding saved models.
+</p>
 
 1. Train the decomposer with synthetic data.
 ```
-python train.py  --dataroot=../data/  --batch=8   --lr=1e-4  
---syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train  --train_net
+python train.py  --dataroot=../data/ --syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train  --train_net
 ```
 
 2. Train the renderer with synthetic data.
 ```
-python train.py     --dataroot=../data/  --batch=8   --lr=1e-4  
---syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train  --train_renderer
+python train.py     --dataroot=../data/  --syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train  --train_renderer
 ```
 
 3. Train the translator using code from 
@@ -114,19 +120,15 @@ python train.py     --dataroot=../data/  --batch=8   --lr=1e-4
 Our pretrained translator can be downloaded 
 [here](https://drive.google.com/file/d/18NhGoKIFcFY4mrP86chSdvCNtrjeFySD/view?usp=share_link).
 
+
 4. Finetune the renderer with translated synthetic data.
 ```
-python train.py  --dataroot=../data/  --batch=8   --lr=1e-4  
---weights_translator=../models/translator_best_state.t7   --weights_renderer=../models/renderer_best_state.t7
---syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train  --train_renderer
+python train.py  --dataroot=../data/  --weights_translator=../models/translator_best_state.t7   --weights_renderer=../models/renderer_best_state.t7  --syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train  --train_renderer
 ```
 
 5. Finetune the decomposer using the full pipeline.
 ```
-python train.py  --weights_decomposer=../models/decomposer_best_state.t7       --dataroot=../data/
---weights_translator=../models/translator_best_state.t7   --weights_renderer=../models/renderer_best_state.t7
---batch=8   --lr=1e-4  --syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train
---train_discriminator --train_net
+python train.py  --weights_decomposer=../models/decomposer_best_state.t7       --dataroot=../data/  --weights_translator=../models/translator_best_state.t7   --weights_renderer=../models/renderer_best_state.t7  --syn_train_dataset_dir=syn_train --real_train_dataset_dir=real_train  --train_discriminator --train_net
 ```
 
 
