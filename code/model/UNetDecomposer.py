@@ -1,7 +1,7 @@
 import numpy as np
-from codes.model.util import Stich, join, normalize
-from codes.model.unet_parts import *
-from codes.model.base_model import BaseModel
+from code.model.util import Stich, join, normalize
+from code.model.unet_parts import *
+from code.model.base_model import BaseModel
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -273,7 +273,7 @@ class UNetDecomposer(BaseModel):
 
 
 
-# from codes.model.UNetDecomposer2 import UNetDecomposer as UNetDecomposer2
+# from code.model.UNetDecomposer2 import UNetDecomposer as UNetDecomposer2
 # model2 = UNetDecomposer2(albedo=True, depth=True, normal=True, light=True, out_range=out_range, output_last_ft=output_last_ft)
 # model2.load_pretrained_model('../models/')
 # model.encoder[0].conv.load_state_dict(model2.encoder[0].state_dict())

@@ -1,6 +1,6 @@
 
-from codes.model.UNetDecomposer import UNetDecomposer
-from codes.model.UNetRenderer import UNetRenderer
+from code.model.UNetDecomposer import UNetDecomposer
+from code.model.UNetRenderer import UNetRenderer
 
 models = {}
 def register_model(name):

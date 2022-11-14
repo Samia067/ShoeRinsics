@@ -100,7 +100,7 @@ You can download our predictions on real-val and real-FID-val [here](https://dri
 <p align="justify">
     We train our network in stages. We outline each step below. 
     Note that paths should be set appropriately. 
-    Dataroot specifies the path to the root directory containing datasets, 
+    Dataroot specifies the path to the root directory containing datasets. 
     Syn_train_dataset_dir and real_train_dataset_dir are the names of the synthetic and real training dataset directories.
     Weights_translator, weights_renderer, and weights_decomposer should specify path to corresponding saved models.
 </p>
@@ -147,76 +147,10 @@ If you find our work useful in your research, please consider citing our paper:
 }
 ```
 
-<!-- 
-### Reference
-If you find our work useful in your research please consider citing our paper:
-```
-Reference
-@inproceedings{zhao2021camera,
-  title={Camera Pose Matters: Improving Depth Prediction by Mitigating Pose Distribution Bias},
-  author={Zhao, Yunhan and Kong, Shu and Fowlkes, Charless},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={15759--15768},
-  year={2021}
-}
-```
-
-### Contents
-- [Requirments](#requirements)
-- [Dataset](#dataset)
-- [Training](#training)
-- [Evaluation](#evaluation)
-- [Pretrained Models](#pretrained-models)
-
-
-### Requirements
-1. Python 3.6 with Ubuntu 16.04
-2. Pytorch 1.1.0
-3. Apex 0.1 (optional)
-
-You also need other third-party libraries, such as numpy, pillow, torchvision, and tensorboardX (optional) to run the code. We use apex when training all models but it is not strictly required to run the code. 
-
-### Dataset
-We use InteriorNet and ScanNet in this project. The detailed data file lists are located in `dataset` folder where each file correspinds to one training/testing distribution (natural, uniform or restricted). Please download and extract the appropriate files before training.
-####  Dataset Structure (e.g. interiorNet_training_natural_10800)
-```
-interiorNet_training_natural_10800
-    | rgb
-        | rgb0.png
-        | ...
-    | depth
-        | depth0.png
-        | ...
-    cam_parameter.txt
-```
-`cam_parameter.txt` contains the intrinsics and camera pose for each sample in the subset. Feel free to sample your own distribution and train with your own data. 
-
-### Training
-All training steps use one common `train.py` file so please make sure to comment/uncomment for training with CPP, PDA, or CPP + PDA.
-```bash
-CUDA_VISIBLE_DEVICES=<GPU IDs> python train.py \
-  --data_root=<your absolute path to InteriorNet or ScanNet> \
-  --training_set_name=interiorNet_training_natural_10800 \
-  --testing_set_name=interiorNet_testing_natural_1080 \
-  --batch_size=12 --total_epoch_num=200 --is_train --eval_batch_size=10
-```
-`batch_size` and `eval_batch_size` are flexible to change given your working environment. Feel free to swap `interiorNet_training_natural_10800` and `interiorNet_testing_natural_1080` to train and test on different distributions.
-
-### Evaluations
-Evaluate the final results
-```bash
-CUDA_VISIBLE_DEVICES=<GPU IDs> python train.py \
-  --data_root=<your absolute path to InteriorNet or ScanNet> \
-  --training_set_name=interiorNet_training_natural_10800 \
-  --testing_set_name=interiorNet_testing_natural_1080 \
-  --eval_batch_size=10
-``` 
-If you want to evaluate with your own data, please create your own testing set with the dataset structure described above.
-
-### Pretrained Models
-Pretrained models will be uploaded soon. -->
-
 
 
 ### Questions
 Please feel free to email me at (sshafiqu [at] ics [dot] uci [dot] edu) if you have any questions.
+
+### Acknowledgements
+This work was funded (or partially funded) by the Center for Statistics and Applications in Forensic Evidence (CSAFE) through Cooperative Agreements 70NANB15H176 and 70NANB20H019 between NIST and Iowa State University, which includes activities carried out at Carnegie Mellon University, Duke University, University of California Irvine, University of Virginia, West Virginia University, University of Pennsylvania, Swarthmore College and University of Nebraska, Lincoln.

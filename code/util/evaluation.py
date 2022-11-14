@@ -1,6 +1,6 @@
 import torch, torch.nn as nn
 import numpy as np
-from codes.util.misc import valid_tensor
+from code.util.misc import valid_tensor
 
 
 '''Calculate Intersection over Union (IoU) between print_pred and print_GT. IoU is only calculated in area specified by mask.'''

@@ -17,20 +17,20 @@ import sklearn
 from collections import  OrderedDict
 from torch.utils.data import DataLoader
 
-from codes.util.option import Options
-from codes.model.models import get_model
-from codes.model.discriminator import Discriminator
-from codes.dataset.syn_real_dataset import SynRealDataset
-from codes.dataset.syn_dataset import SynDataset
-from codes.dataset.real_dataset import RealDataset
-from codes.util.morphology import Dilation2d
-from codes.util.misc import make_variable, get_normal_visual, make_one_hot, show_tensor, save_tensor_grid
-from codes.util.evaluation import iou, get_print
+from code.util.option import Options
+from code.model.models import get_model
+from code.model.discriminator import Discriminator
+from code.dataset.syn_real_dataset import SynRealDataset
+from code.dataset.syn_dataset import SynDataset
+from code.dataset.real_dataset import RealDataset
+from code.util.morphology import Dilation2d
+from code.util.misc import make_variable, get_normal_visual, make_one_hot, show_tensor, save_tensor_grid
+from code.util.evaluation import iou, get_print
 
-# from codes.cycada.cycada.models.models import models
-# from codes.utils.utils import valid_tensor, save_individual_images
-# from codes.cycada.cycada.models.unet import GradientRegularizationLoss
-# from codes.utils.utils import plot_confusion_matrix, make_one_hot
+# from code.cycada.cycada.models.models import models
+# from code.utils.utils import valid_tensor, save_individual_images
+# from code.cycada.cycada.models.unet import GradientRegularizationLoss
+# from code.utils.utils import plot_confusion_matrix, make_one_hot
 
 
 def discriminator_loss(score, label, weights=None):

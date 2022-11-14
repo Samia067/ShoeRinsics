@@ -1,7 +1,7 @@
 import torch as th
-from codes.model.UNetDecomposer import *
-from codes.model.base_model import BaseModel
-# from codes.utils.utils import make_one_hot
+from code.model.UNetDecomposer import *
+from code.model.base_model import BaseModel
+# from code.utils.utils import make_one_hot
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -217,7 +217,7 @@ class UNetRenderer(BaseModel):
         return self.forward_patch(albedo, depth, normal, light_type)
 
 
-# from codes.model.UNetRenderer2 import UNetRenderer as UNetRenderer2
+# from code.model.UNetRenderer2 import UNetRenderer as UNetRenderer2
 # model2 = UNetRenderer2(out_range=out_range)
 # model2.load_pretrained_model('../models/')
 # i = 0

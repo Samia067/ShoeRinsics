@@ -1,5 +1,5 @@
 import torch
-from codes.util.misc import gaussian_kernel, eps
+from code.util.misc import gaussian_kernel, eps
 import numpy as np
 
 

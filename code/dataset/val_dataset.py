@@ -1,7 +1,7 @@
 import numpy as np
 import os
-from codes.dataset.util import read_image, image_to_channels
-from codes.util.misc import get_invalid_tensor
+from code.dataset.util import read_image, image_to_channels
+from code.util.misc import get_invalid_tensor
 
 class ValDataset(object):
 

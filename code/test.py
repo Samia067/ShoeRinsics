@@ -6,12 +6,12 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader
 
-from codes.util.option import Options
-from codes.util.misc import make_variable, valid_tensor, get_color_mapped_images, save_individual_images, save_tensor_grid
-from codes.util.augmentation import reverse_modification, get_image_modifications
-from codes.util.evaluation import get_print, iou
-from codes.model.models import get_model
-from codes.dataset.RealShoeDataset import RealShoeDataset
+from code.util.option import Options
+from code.util.misc import make_variable, valid_tensor, get_color_mapped_images, save_individual_images, save_tensor_grid
+from code.util.augmentation import reverse_modification, get_image_modifications
+from code.util.evaluation import get_print, iou
+from code.model.models import get_model
+from code.dataset.RealShoeDataset import RealShoeDataset
 
 
 def get_average_visuals(net, image, mask, visuals=None, subtract_min_depth=True, conv=True, test_time_aug=False):
