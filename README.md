@@ -2,7 +2,7 @@
 
 This is the official project page for our paper:
 
-[Creating a Forensic Database of Shoeprints from Online Shoe-Tread Photos](https://arxiv.org/abs/2205.02361)
+[Creating a Forensic Database of Shoeprints from Online Shoe-Tread Photos](https://openaccess.thecvf.com/content/WACV2023/html/Shafique_Creating_a_Forensic_Database_of_Shoeprints_From_Online_Shoe-Tread_Photos_WACV_2023_paper.html)
 
 [Samia Shafique](https://sites.google.com/site/samiashafique067/), [Bailey Kong](https://baileykong.com/), [Shu Kong*](http://www.cs.cmu.edu/~shuk/), and [Charless Fowlkes*](https://www.ics.uci.edu/~fowlkes/)
 
