@@ -135,15 +135,12 @@ python train.py  --weights_decomposer=../models/decomposer_best_state.t7       -
 ### Reference
 If you find our work useful in your research, please consider citing our paper:
 ```
-@misc{https://doi.org/10.48550/arxiv.2205.02361,
-  doi = {10.48550/ARXIV.2205.02361},
-  url = {https://arxiv.org/abs/2205.02361},
-  author = {Shafique, Samia and Kong, Bailey and Kong, Shu and Fowlkes, Charless C.},
-  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {Creating a Forensic Database of Shoeprints from Online Shoe Tread Photos},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {arXiv.org perpetual, non-exclusive license}
+@inproceedings{shafique2023creating,
+  title={Creating a Forensic Database of Shoeprints From Online Shoe-Tread Photos},
+  author={Shafique, Samia and Kong, Bailey and Kong, Shu and Fowlkes, Charless},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={858--868},
+  year={2023}
 }
 ```
 
