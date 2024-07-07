@@ -8,6 +8,13 @@ This is the official project page for our paper:
 
 [WACV 2023](https://wacv2023.thecvf.com/home)
 
+[project page](https://github.com/Samia067/ShoeRinsics),
+[dataset](https://github.com/Samia067/ShoeRinsics#datasets),
+[code](https://github.com/Samia067/ShoeRinsics#pretrained-models),
+[pdf](https://openaccess.thecvf.com/content/WACV2023/html/Shafique_Creating_a_Forensic_Database_of_Shoeprints_From_Online_Shoe-Tread_Photos_WACV_2023_paper.html), 
+[poster](https://drive.google.com/file/d/1FyuQ3vByLn3IzBZhpyjpzSt1T8OHWurn/view?usp=sharing), 
+[video](https://drive.google.com/file/d/1OFT2q2-vF2rKRRA0xZjka_YpjwVmolWX/view?usp=sharing)
+
 ### Abstract
 <p align="justify">
     Shoe-tread impressions are one of the most common types of evidence left at crime scenes. However, the utility of such evidence is limited by the lack of databases of footwear prints that cover the large and growing number of distinct shoe models. Moreover, the database is preferred to contain the 3D shape, or depth, of shoe-tread photos so as to allow for extracting shoeprints to match a query (crime-scene) print. We propose to address this gap by leveraging shoe-tread photos collected by online retailers. The core challenge is to predict depth maps for these photos. As they do not have ground-truth 3D shapes allowing for training depth predictors, we exploit synthetic data that does. We develop a method, termed ShoeRinsics, that learns to predict depth from fully supervised synthetic data and unsupervised retail image data. In particular, we find domain adaptation and intrinsic image decomposition techniques effectively mitigate the synthetic-real domain gap and yield significantly better depth predictions. To validate our method, we introduce 2 validation sets consisting of shoe-tread image and print pairs and define a benchmarking protocol to quantify the quality of predicted depth. On this benchmark, ShoeRinsics outperforms existing methods of depth prediction and synthetic-to-real domain adaptation.
