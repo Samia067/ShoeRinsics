@@ -55,19 +55,19 @@ intrinsic annotations (depth, albedo, normal, and lighting).
 We synthesize a shoe-tread image with a given depth map, an albedo map, and a lighting environment. 
 We pass these to a physically-based rendering engine (Mitsuba) to generate the synthetic image. 
 The final syn-train set contains 88,408 shoe-treads with paired ground-truth intrinsic images.
-[Download](https://drive.google.com/drive/folders/1nLog4COnTn1ZejaHuEZG2ZXr4JlMrG7-?usp=share_link)
+[Download](https://drive.google.com/file/d/1fL8zdVyeW_W36UBtp4LOqiLmnpSSjWrL/view?usp=sharing)
 
 2. <b>Real-train</b>: Online retailers adopt photos of shoes for advertisement, 
 which include shoe-tread images. <i>Real-train</i> consists of 3,543 such shoe-tread images 
 and their masks (computed by a simple network to segment out the shoe-treads). 
 This dataset does not contain any ground-truth and consists only of new, athletic shoes.
-[Download](https://drive.google.com/drive/folders/12zoVAyfyymA3jINW8ATJ9Zx_D8YHPnOo?usp=share_link)
+[Download](https://drive.google.com/file/d/11K1SjQGqPpBoR6zzTwDUU6iOVf28ClWm/view?usp=sharing)
 
 3. <b>Real-val</b>: This dataset contains a total of 36 sets of shoe-tread images, ground-truth shoeprints, and masks. 
 We create this dataset by collecting shoes, photographing them, and collecting their prints using the <i>block printing technique</i>. 
 There are 3 different shoe categories present in this dataset - 22 new-athletic, 6 new-formal, and 8 used-athletic.
 Further details are provided in the README file. 
-[Download](https://drive.google.com/drive/folders/1-QW6MlNnxV3FHjlM68eyRGzAn39AX1ZR?usp=share_link)
+[Download](https://drive.google.com/file/d/1Hk-MfeBEinOtn4htH9yhHefDSpdFk2YL/view?usp=sharing)
 
 4. <b>Real-FID-val</b>: This dataset contains 41 sets of shoe-tread images, shoeprints, and masks.
 Note that the shoeprints in this dataset come from the [FID300](https://fid.dmi.unibas.ch/) dataset 
@@ -76,16 +76,16 @@ while the shoe-tread images are separately downloaded from online retailers
 We find matched FID300 prints (used as the ground-truth) and the downloaded shoe-tread images,
 and align them manually. Real-FID-val contains 41 new, athletic shoe-tread images with 
 corresponding ground-truth shoeprints and masks to segment out the shoe-treads.
-[Download](https://drive.google.com/drive/folders/1feHRI1_wErloXhmDpbTiorUaOwS6J5IO?usp=share_link)
+[Download]https://drive.google.com/file/d/1uazRuixxl-70mZGCdEZL0euf65ImGfbh/view?usp=sharing)
 
-You can view and download all the datasets together [here](https://drive.google.com/drive/folders/1VkCTC9CS4VZ7z1Vt7WKBwSNUCxXlGmCv?usp=share_link).
+You can view and download all the datasets together [here](https://drive.google.com/drive/folders/1Iv55eOm9sdkE_1xFJYtTP5Xae2XWxuL2?usp=sharing).
 
 ### Pretrained Models
-Our pretrained model is available for download [here](https://drive.google.com/file/d/1XQGoIZfieuRd891eqpaw0-_fD7PxVFXH/view?usp=share_link). 
+Our pretrained model is available for download [here](https://drive.google.com/file/d/1XQGoIZfieuRd891eqpaw0-_fD7PxVFXH/view?usp=sharing). 
 We additionally provide pretrained versions of our supporting models 
-([translator](https://drive.google.com/file/d/18NhGoKIFcFY4mrP86chSdvCNtrjeFySD/view?usp=share_link), 
-[renderer](https://drive.google.com/file/d/1Jxueslah8HPGXq3Kgt7KYy0RXskbZso5/view?usp=share_link)).
-All pretrained models can be downloaded together [here](https://drive.google.com/drive/folders/1C4Odv49cczOdqwRLZGDOSOnUCCD0zcJx?usp=share_link).
+([translator](https://drive.google.com/file/d/18NhGoKIFcFY4mrP86chSdvCNtrjeFySD/view?usp=sharing), 
+[renderer](https://drive.google.com/file/d/1Jxueslah8HPGXq3Kgt7KYy0RXskbZso5/view?usp=sharing)).
+All pretrained models can be downloaded together [here](https://drive.google.com/drive/folders/1C4Odv49cczOdqwRLZGDOSOnUCCD0zcJx?usp=sharing).
 
 ### Testing
 
@@ -100,7 +100,7 @@ test.py --weights_decomposer=../models/decomposer_best_state.t7    --dataroot=..
     Val_dataset_dir should name the directory for the validation dataset used (real_val or real_FID_val).
 </p>
 
-Our predictions on real-val and real-FID-val are available [here](https://drive.google.com/drive/folders/1koeAF1iKp_fjviEaD0UvbYRb2Yx8TPnF?usp=share_link).
+Our predictions on real-val and real-FID-val are available [here](https://drive.google.com/file/d/1MIOA9yxAUlf2DWLTaWK-WnUBDzcfPZMU/view?usp=sharing).
 
 ### Training
 
@@ -125,7 +125,7 @@ python train.py     --dataroot=../data/  --syn_train_dataset_dir=syn_train --rea
 3. Train the translator using code from 
 [CycleGAN's official release](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix).
 Our pretrained translator can be downloaded 
-[here](https://drive.google.com/file/d/18NhGoKIFcFY4mrP86chSdvCNtrjeFySD/view?usp=share_link).
+[here](https://drive.google.com/file/d/18NhGoKIFcFY4mrP86chSdvCNtrjeFySD/view?usp=drive_link).
 
 
 4. Finetune the renderer with translated synthetic data.
