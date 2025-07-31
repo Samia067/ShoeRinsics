@@ -76,7 +76,7 @@ while the shoe-tread images are separately downloaded from online retailers
 We find matched FID300 prints (used as the ground-truth) and the downloaded shoe-tread images,
 and align them manually. Real-FID-val contains 41 new, athletic shoe-tread images with 
 corresponding ground-truth shoeprints and masks to segment out the shoe-treads.
-[Download]https://drive.google.com/file/d/1uazRuixxl-70mZGCdEZL0euf65ImGfbh/view?usp=sharing)
+[Download](https://drive.google.com/file/d/1uazRuixxl-70mZGCdEZL0euf65ImGfbh/view?usp=sharing)
 
 You can view and download all the datasets together [here](https://drive.google.com/drive/folders/1Iv55eOm9sdkE_1xFJYtTP5Xae2XWxuL2?usp=sharing).
 
